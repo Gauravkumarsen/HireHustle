@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux'
 import { toast } from 'sonner'
 import axios from 'axios'
 import { APPLICATION_API_END_POINT } from '@/utils/backendApi'
-APPLICATION_API_END_POINT
 
 const shortlistingStatus = ["Accepted", "Rejected"]
 
@@ -39,7 +38,7 @@ function ApplicantsTable() {
                 </TableHeader>
                 <TableBody>
                 {
-                    applicants && applicants.applications.map((item)=>(
+                    applicants && applicants?.applications?.map((item)=>(
                         <tr key={item._id}>
                     <TableCell>{item?.applicant?.fullname}</TableCell>
                     <TableCell>{item?.applicant?.email}</TableCell>
@@ -47,7 +46,7 @@ function ApplicantsTable() {
                     <TableCell className=" text-blue-700 cursor-pointer">{
                         item?.applicant?.profile?.resume? <a href={item?.applicant?.profile?.resume} target="_blank" rel="noopener noreferrer" >{item?.applicant?.profile?.resumeOriginalName}</a> : <span>Not Uploaded</span>
                     }</TableCell>
-                    <TableCell>{item?.createdAt.split("T")[0]}</TableCell>
+                    <TableCell>{item?.applicant?.createdAt.split("T")[0]}</TableCell>
                     <TableCell className="float-right cursor-pointer">
                     <Popover>
                         <PopoverTrigger>

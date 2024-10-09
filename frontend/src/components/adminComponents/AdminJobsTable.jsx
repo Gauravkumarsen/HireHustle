@@ -13,7 +13,6 @@ import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Edit2, Eye, MoreHorizontal } from "lucide-react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
-import store from "@/redux/store";
 
 function AdminJobsTable() {
 
@@ -58,10 +57,6 @@ function AdminJobsTable() {
                         <MoreHorizontal />
                       </PopoverTrigger>
                       <PopoverContent className="w-32">
-                        <div onClick={()=> navigate(`/admin/jobs/${job._id}`)}className="flex items-center gap-2 w-fit cursor-pointer">
-                          <Edit2 className="w-4" />
-                          <span>Edit</span>
-                        </div>
                         <div onClick={()=>navigate(`/admin/jobs/${job._id}/applicants`)} className="flex items-centerw-fit gap-2 cursor-pointer mt-2">
                           <Eye className="w-4"/>
                           <span>Applicants</span>

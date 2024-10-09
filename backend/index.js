@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 const corsOptions = {
-    origin:'https://hirehustle-2w6b.onrender.com/',
+    origin:'https://hirehustle-2w6b.onrender.com',
     credentials:true
 }
 app.use(cors(corsOptions));
